@@ -12,8 +12,10 @@ def lambda_handler(event, context):
         InvocationType='Event',
         Payload=json.dumps({'name' : name}))
     
-    # TODO implement
     return {
         'statusCode': 202,
+        'headers' : {
+            'Access-Control-Allow-Origin' : '*'
+        },
         'body': json.dumps('Function invoked successfully! Processing...')
     }
